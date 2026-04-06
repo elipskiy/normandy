@@ -1,4 +1,4 @@
-import { useState } from "react";
+import usePersistedState from "../hooks/usePersistedState";
 import * as icons from "lucide-react";
 import {
   ChevronDown,
@@ -9,7 +9,7 @@ import {
   Navigation,
   Star,
 } from "lucide-react";
-import { DAYS } from "../data/days";
+import { DAYS, DISHES } from "../data/days";
 
 function FoodDayCard({ data, isOpen, toggle }) {
   const Icon = icons[data.icon] || icons.Circle;
@@ -54,6 +54,11 @@ function FoodDayCard({ data, isOpen, toggle }) {
 
       <div className="day-body">
         <div className="day-body-inner">
+          {data.foodTip && (
+            <div className="food-tip-block">
+              {data.foodTip}
+            </div>
+          )}
           {hasFood && (
             <div className="day-section section-food">
               <div className="day-section-title">
@@ -139,7 +144,7 @@ export default function FoodTab() {
   const daysWithFood = DAYS.filter(
     (d) => d.food?.length > 0 || d.markets?.length > 0
   );
-  const [openDays, setOpenDays] = useState(() => {
+  const [openDays, setOpenDays] = usePersistedState("normandy:food-days", () => {
     const init = {};
     daysWithFood.forEach((_, i) => {
       init[i] = true;
@@ -149,8 +154,45 @@ export default function FoodTab() {
 
   const toggle = (i) => setOpenDays((prev) => ({ ...prev, [i]: !prev[i] }));
 
+  const [showGuide, setShowGuide] = usePersistedState("normandy:food-guide", false);
+
   return (
     <div className="days">
+      {/* Dishes guide */}
+      <div className="day-card">
+        <button className="day-header" onClick={() => setShowGuide((v) => !v)}>
+          <div className="day-icon" style={{ background: "var(--amber-light)", color: "var(--amber-dark)" }}>
+            <UtensilsCrossed size={20} />
+          </div>
+          <div className="day-info">
+            <div className="day-title-row">
+              <span className="day-name" style={{ color: "var(--amber-dark)" }}>Что пробовать</span>
+            </div>
+            <div className="day-summary">Гайд по нормандским блюдам — что, где и почему</div>
+          </div>
+          <span className="day-chevron" style={showGuide ? { transform: "rotate(180deg)" } : {}}>
+            <ChevronDown size={18} />
+          </span>
+        </button>
+        {showGuide && (
+          <div style={{ padding: "0 18px 18px" }}>
+            {DISHES.map((d, i) => {
+              const DIcon = icons[d.icon] || icons.Circle;
+              return (
+                <div key={i} className="dish-guide-item">
+                  <div className="dish-guide-head">
+                    <DIcon size={16} className="dish-guide-icon" />
+                    <span className="dish-guide-name">{d.name}</span>
+                    <span className="dish-guide-where">{d.where}</span>
+                  </div>
+                  <div className="dish-guide-desc">{d.desc}</div>
+                </div>
+              );
+            })}
+          </div>
+        )}
+      </div>
+
       {daysWithFood.map((d, i) => (
         <FoodDayCard
           key={i}

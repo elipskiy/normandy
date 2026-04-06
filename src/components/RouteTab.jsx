@@ -1,10 +1,10 @@
-import { useState } from "react";
+import usePersistedState from "../hooks/usePersistedState";
 import { MapPin, Compass } from "lucide-react";
 import { DAYS } from "../data/days";
 import DayCard from "./DayCard";
 
 export default function RouteTab() {
-  const [openDays, setOpenDays] = useState({ 1: true });
+  const [openDays, setOpenDays] = usePersistedState("normandy:route-days", { 1: true });
 
   const toggle = (i) =>
     setOpenDays((prev) => ({ ...prev, [i]: !prev[i] }));

@@ -57,7 +57,7 @@ body {
 /* ─── HEADER ────────────────────────── */
 .header {
   background: var(--ink);
-  padding: 40px 24px 32px;
+  padding: 24px 24px 20px;
   position: relative;
   overflow: hidden;
 }
@@ -79,11 +79,11 @@ body {
 }
 .header-meta {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 10px;
   letter-spacing: 2.5px;
   text-transform: uppercase;
   color: var(--ink-faint);
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   position: relative;
   display: flex;
   align-items: center;
@@ -94,16 +94,16 @@ body {
 }
 .header h1 {
   font-family: var(--font-display);
-  font-size: 42px;
+  font-size: 32px;
   font-weight: 400;
   color: var(--cream);
   line-height: 1;
   letter-spacing: -0.5px;
   position: relative;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 .header-route {
-  font-size: 15px;
+  font-size: 13px;
   color: var(--ink-faint);
   line-height: 1.5;
   position: relative;
@@ -116,29 +116,6 @@ body {
   font-weight: 400;
 }
 
-/* ─── HEADER FOOD ───────────────────── */
-.header-food {
-  margin-top: 14px;
-  padding: 10px 14px;
-  background: rgba(255, 255, 255, 0.07);
-  border-radius: 8px;
-  font-size: 12px;
-  color: var(--cream-dark);
-  line-height: 1.7;
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-}
-.header-food strong {
-  color: #fcd34d;
-  font-weight: 600;
-}
-.header-food-icon {
-  flex-shrink: 0;
-  margin-top: 3px;
-  opacity: 0.7;
-}
 
 /* ─── TABS ──────────────────────────── */
 .tabs {
@@ -726,6 +703,19 @@ body {
   height: 13px;
 }
 
+/* Food tip */
+.food-tip-block {
+  font-size: 13px;
+  color: var(--ink-light);
+  line-height: 1.6;
+  padding: 12px 14px;
+  background: var(--amber-light);
+  border-radius: 10px;
+  margin-bottom: 14px;
+  font-style: italic;
+  font-weight: 300;
+}
+
 /* Food section */
 .section-food {
   background: #fffbeb;
@@ -834,6 +824,46 @@ body {
 }
 .section-nearby .day-section-title {
   color: var(--ink-faint);
+}
+
+/* ─── DISH GUIDE ────────────────────── */
+.dish-guide-item {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--cream-dark);
+}
+.dish-guide-item:last-child {
+  border-bottom: none;
+}
+.dish-guide-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.dish-guide-icon {
+  color: var(--amber);
+  flex-shrink: 0;
+}
+.dish-guide-name {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.dish-guide-where {
+  font-size: 11px;
+  color: var(--ink-faint);
+  background: var(--cream);
+  padding: 1px 8px;
+  border-radius: 4px;
+  font-weight: 400;
+}
+.dish-guide-desc {
+  font-size: 13px;
+  color: var(--ink-light);
+  line-height: 1.6;
+  margin-top: 4px;
+  font-weight: 300;
 }
 
 /* ─── MOBILE ────────────────────────── */

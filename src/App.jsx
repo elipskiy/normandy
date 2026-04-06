@@ -1,10 +1,9 @@
-import { useState } from "react";
-import { Caravan, MapPin, Bookmark, Coins, ChefHat, UtensilsCrossed } from "lucide-react";
+import usePersistedState from "./hooks/usePersistedState";
+import { Caravan, MapPin, Bookmark, Coins, UtensilsCrossed } from "lucide-react";
 import RouteTab from "./components/RouteTab";
 import FoodTab from "./components/FoodTab";
 import BookTab from "./components/BookTab";
 import BudgetTab from "./components/BudgetTab";
-import { FOOD_HIGHLIGHTS } from "./data/days";
 
 const TABS = [
   { key: "route", label: "Маршрут", Icon: MapPin },
@@ -14,7 +13,7 @@ const TABS = [
 ];
 
 export default function App() {
-  const [tab, setTab] = useState("route");
+  const [tab, setTab] = usePersistedState("normandy:tab", "route");
 
   return (
     <div className="shell">
@@ -27,10 +26,6 @@ export default function App() {
         <div className="header-route">
           Сидр<span>&rarr;</span>Via Ferrata<span>&rarr;</span>Мон-Сен-Мишель
           <span>&rarr;</span>Aéroplume
-        </div>
-        <div className="header-food">
-          <ChefHat size={13} className="header-food-icon" />
-          <span><strong>Пробовать:</strong> {FOOD_HIGHLIGHTS}</span>
         </div>
       </header>
 
