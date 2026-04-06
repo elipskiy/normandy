@@ -548,6 +548,9 @@ body {
   color: var(--amber);
 }
 .nearby-light {
+  display: flex;
+  align-items: center;
+  gap: 4px;
   font-size: 11px;
   color: var(--amber-dark);
   margin-top: 2px;
