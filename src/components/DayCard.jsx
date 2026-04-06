@@ -1,75 +1,28 @@
 import * as icons from "lucide-react";
-import { ChevronDown, Compass, UtensilsCrossed, Fish, AlertTriangle } from "lucide-react";
+import { ChevronDown, Compass, MapPinned } from "lucide-react";
 import StopCard from "./StopCard";
-
-function SectionBlock({ icon: Icon, title, className, children }) {
-  return (
-    <div className={`day-section ${className}`}>
-      <div className="day-section-title">
-        <Icon size={13} /> {title}
-      </div>
-      {children}
-    </div>
-  );
-}
-
-function FoodSection({ items }) {
-  if (!items?.length) return null;
-  return (
-    <SectionBlock icon={UtensilsCrossed} title="Где есть" className="section-food">
-      {items.map((f, i) => (
-        <div key={i} className={`food-item${f.trap ? " food-trap" : ""}`}>
-          <div className="food-head">
-            <span className="food-name">
-              {f.trap && <AlertTriangle size={13} className="food-trap-icon" />}
-              {f.name}
-            </span>
-            <span className="food-price">{f.price}</span>
-          </div>
-          <div className="food-meta">{f.place} · {f.vibe}</div>
-          <div className="food-desc">{f.desc}</div>
-        </div>
-      ))}
-    </SectionBlock>
-  );
-}
-
-function MarketsSection({ items }) {
-  if (!items?.length) return null;
-  return (
-    <SectionBlock icon={Fish} title="Рынки и морепродукты" className="section-markets">
-      {items.map((m, i) => {
-        const MIcon = icons[m.icon] || icons.Store;
-        return (
-          <div key={i} className="market-item">
-            <div className="market-name">
-              <MIcon size={14} className="market-icon" /> {m.name}
-            </div>
-            <div className="market-when">{m.when}</div>
-            <div className="market-desc">{m.desc}</div>
-          </div>
-        );
-      })}
-    </SectionBlock>
-  );
-}
+import { buildDayRouteUrl } from "../utils/maps";
 
 function NearbySection({ items }) {
   if (!items?.length) return null;
   return (
-    <SectionBlock icon={Compass} title="Рядом, если будет время" className="section-nearby">
+    <div className="day-section section-nearby">
+      <div className="day-section-title">
+        <Compass size={13} /> Рядом, если будет время
+      </div>
       {items.map((n, i) => (
         <div key={i} className="nearby-item">
           <span className="nearby-item-name">{n.name}</span>
           <span className="nearby-item-desc"> — {n.desc}</span>
         </div>
       ))}
-    </SectionBlock>
+    </div>
   );
 }
 
 export default function DayCard({ data, isOpen, toggle }) {
   const Icon = icons[data.icon] || icons.Circle;
+  const routeUrl = buildDayRouteUrl(data.stops);
 
   return (
     <div className={`day-card${isOpen ? " open" : ""}`}>
@@ -98,11 +51,21 @@ export default function DayCard({ data, isOpen, toggle }) {
 
       <div className="day-body">
         <div className="day-body-inner">
+          {routeUrl && (
+            <a
+              href={routeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="day-route-btn"
+            >
+              <MapPinned size={15} />
+              Маршрут дня в Google Maps
+            </a>
+          )}
+
           {data.stops.map((s, i) => (
             <StopCard key={i} stop={s} />
           ))}
-          <FoodSection items={data.food} />
-          <MarketsSection items={data.markets} />
           <NearbySection items={data.nearby} />
         </div>
       </div>

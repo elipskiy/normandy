@@ -290,6 +290,34 @@ body {
   padding-bottom: 18px;
 }
 
+/* ─── DAY ROUTE BUTTON ──────────────── */
+.day-route-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 16px;
+  margin-bottom: 16px;
+  background: var(--blue-light);
+  color: var(--blue);
+  border: 1px solid #c5d3ea;
+  border-radius: 10px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.15s, box-shadow 0.15s;
+}
+.day-route-btn:hover {
+  background: #dce5f3;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+.day-route-btn svg {
+  width: 15px;
+  height: 15px;
+}
+
 /* ─── TIMELINE STOPS ────────────────── */
 .stop {
   position: relative;

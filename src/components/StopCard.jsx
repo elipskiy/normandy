@@ -5,7 +5,7 @@ import {
   MapPin,
   Lightbulb,
   Clock,
-  Map,
+  Navigation,
 } from "lucide-react";
 
 export default function StopCard({ stop }) {
@@ -69,7 +69,7 @@ export default function StopCard({ stop }) {
             rel="noopener noreferrer"
             className="tag tag-maps"
           >
-            <Map size={12} /> Карта
+            <Navigation size={12} /> Карта
           </a>
         )}
         {stop.phone && (

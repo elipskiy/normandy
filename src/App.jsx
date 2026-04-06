@@ -1,12 +1,14 @@
 import { useState } from "react";
-import { Caravan, MapPin, Bookmark, Coins, ChefHat } from "lucide-react";
+import { Caravan, MapPin, Bookmark, Coins, ChefHat, UtensilsCrossed } from "lucide-react";
 import RouteTab from "./components/RouteTab";
+import FoodTab from "./components/FoodTab";
 import BookTab from "./components/BookTab";
 import BudgetTab from "./components/BudgetTab";
 import { FOOD_HIGHLIGHTS } from "./data/days";
 
 const TABS = [
   { key: "route", label: "Маршрут", Icon: MapPin },
+  { key: "food", label: "Еда", Icon: UtensilsCrossed },
   { key: "book", label: "Бронь", Icon: Bookmark },
   { key: "budget", label: "Бюджет", Icon: Coins },
 ];
@@ -48,6 +50,7 @@ export default function App() {
       {/* Content */}
       <main className="content">
         {tab === "route" && <RouteTab />}
+        {tab === "food" && <FoodTab />}
         {tab === "book" && <BookTab />}
         {tab === "budget" && <BudgetTab />}
       </main>

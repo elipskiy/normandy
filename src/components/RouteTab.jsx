@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MapPin, UtensilsCrossed, Fish, Compass } from "lucide-react";
+import { MapPin, Compass } from "lucide-react";
 import { DAYS } from "../data/days";
 import DayCard from "./DayCard";
 
@@ -38,12 +38,6 @@ export default function RouteTab() {
           <div className="legend-item">
             <MapPin size={13} />
             <span style={{ color: "var(--red)", fontWeight: 500 }}>Нужна бронь</span>
-          </div>
-          <div className="legend-item">
-            <UtensilsCrossed size={13} /> Еда
-          </div>
-          <div className="legend-item">
-            <Fish size={13} /> Рынки
           </div>
           <div className="legend-item">
             <Compass size={13} /> Рядом
