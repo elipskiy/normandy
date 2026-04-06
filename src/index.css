@@ -512,20 +512,51 @@ body {
   height: 13px;
 }
 .nearby-item {
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   line-height: 1.45;
 }
 .nearby-item:last-child {
   margin-bottom: 0;
+}
+.nearby-item-head {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
 }
 .nearby-item-name {
   font-size: 14px;
   font-weight: 500;
   color: var(--ink-light);
 }
+.nearby-photo .nearby-item-name {
+  color: var(--ink);
+}
+.nearby-photo-icon {
+  color: var(--amber);
+  flex-shrink: 0;
+}
+.nearby-maps-link {
+  color: var(--ink-faint);
+  display: flex;
+  align-items: center;
+  padding: 2px 4px;
+  border-radius: 4px;
+  transition: color 0.15s;
+}
+.nearby-maps-link:hover {
+  color: var(--amber);
+}
+.nearby-light {
+  font-size: 11px;
+  color: var(--amber-dark);
+  margin-top: 2px;
+  font-style: italic;
+}
 .nearby-item-desc {
   font-size: 13px;
   color: var(--ink-muted);
+  margin-top: 1px;
   font-weight: 300;
 }
 

@@ -1,5 +1,5 @@
 import * as icons from "lucide-react";
-import { ChevronDown, Compass, MapPinned } from "lucide-react";
+import { ChevronDown, Compass, MapPinned, Camera, Navigation } from "lucide-react";
 import StopCard from "./StopCard";
 import { buildDayRouteUrl } from "../utils/maps";
 
@@ -11,9 +11,18 @@ function NearbySection({ items }) {
         <Compass size={13} /> Рядом, если будет время
       </div>
       {items.map((n, i) => (
-        <div key={i} className="nearby-item">
-          <span className="nearby-item-name">{n.name}</span>
-          <span className="nearby-item-desc"> — {n.desc}</span>
+        <div key={i} className={`nearby-item${n.type === "photo" ? " nearby-photo" : ""}`}>
+          <div className="nearby-item-head">
+            {n.type === "photo" && <Camera size={13} className="nearby-photo-icon" />}
+            <span className="nearby-item-name">{n.name}</span>
+            {n.maps && (
+              <a href={n.maps} target="_blank" rel="noopener noreferrer" className="nearby-maps-link">
+                <Navigation size={11} />
+              </a>
+            )}
+          </div>
+          <div className="nearby-item-desc">{n.desc}</div>
+          {n.light && <div className="nearby-light">🕐 {n.light}</div>}
         </div>
       ))}
     </div>
