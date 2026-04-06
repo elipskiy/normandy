@@ -167,10 +167,18 @@ export const DAYS = [
     foodTip: "По дороге заедь в Villedieu-les-Poêles — там отличные гречневые блины. На ужин — ягнёнок с солёных лугов (pré-salé): овцы пасутся у залива, мясо получается нежным и чуть солоноватым. Спроси именно «AOP Prés-Salés du Mont-Saint-Michel».",
     stops: [
       {
-        time: "09:00",
-        name: "Выезд из Клеси",
+        time: "08:30",
+        name: "Roche d'Oëtre",
+        type: "optional",
+        place: "Saint-Philbert-sur-Orne (15 мин южнее Клеси)",
+        desc: "118 м скала над ущельем Рувр. Тропы по краю обрыва, скальная формация в форме лица. Бесплатно, парковка для кемпера.",
+        maps: "https://www.google.com/maps/search/?api=1&query=Roche+d%27O%C3%ABtre+Saint-Philbert-sur-Orne",
+      },
+      {
+        time: "09:30",
+        name: "Выезд на MSM",
         type: "drive",
-        desc: "~2 ч через нормандский бокаж.",
+        desc: "~2 ч через бокаж. По дороге — Villedieu-les-Poêles (литейня колоколов XII века, медные мастерские).",
       },
       {
         time: "~11:00",
@@ -240,8 +248,20 @@ export const DAYS = [
     ],
     nearby: [
       {
-        name: "Scriptorial d'Avranches",
-        desc: "Музей средневековых рукописей.",
+        name: "Pointe du Grouin du Sud",
+        desc: "Лучший нетуристический вид на MSM. Солёные луга, овцы пре-сале прямо у ног. 20 мин от MSM, бесплатно.",
+      },
+      {
+        name: "Roche Torin (Courtils)",
+        desc: "Скала с ночной панорамой подсвеченного MSM в полной тишине. Место фотографов, 10 мин от Beauvoir.",
+      },
+      {
+        name: "Barrage du Couesnon",
+        desc: "Дамба у MSM — вечерний вид на остров с уровня воды. Пешком от парковки, бесплатно.",
+      },
+      {
+        name: "Fonderie Cornille-Havard",
+        desc: "Литейня колоколов с XII века в Villedieu-les-Poêles. Смотришь как льют бронзу. ~€7, по дороге.",
       },
     ],
   },
