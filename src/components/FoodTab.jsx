@@ -180,12 +180,21 @@ export default function FoodTab() {
               const DIcon = icons[d.icon] || icons.Circle;
               return (
                 <div key={i} className="dish-guide-item">
-                  <div className="dish-guide-head">
-                    <DIcon size={16} className="dish-guide-icon" />
-                    <span className="dish-guide-name">{d.name}</span>
-                    <span className="dish-guide-where">{d.where}</span>
+                  <div className="dish-guide-content">
+                    <div className="dish-guide-text">
+                      <div className="dish-guide-head">
+                        <DIcon size={16} className="dish-guide-icon" />
+                        <span className="dish-guide-name">{d.name}</span>
+                        <span className="dish-guide-where">{d.where}</span>
+                      </div>
+                      <div className="dish-guide-desc">{d.desc}</div>
+                    </div>
+                    {d.photo && (
+                      <div className="dish-guide-photo">
+                        <img src={import.meta.env.BASE_URL + d.photo} alt={d.name} loading="lazy" />
+                      </div>
+                    )}
                   </div>
-                  <div className="dish-guide-desc">{d.desc}</div>
                 </div>
               );
             })}

@@ -368,6 +368,35 @@ body {
   margin-top: 2px;
   font-style: italic;
 }
+.stop-content {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-top: 4px;
+}
+.stop-text {
+  flex: 1;
+  min-width: 0;
+}
+.stop-photo {
+  flex-shrink: 0;
+  width: 88px;
+  height: 64px;
+  border-radius: 7px;
+  overflow: hidden;
+  border: 1.5px solid var(--border);
+  display: block;
+}
+.stop-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.25s ease;
+}
+.stop-photo:hover img {
+  transform: scale(1.06);
+}
 .stop-desc {
   font-size: 14px;
   color: var(--ink-light);
@@ -833,6 +862,29 @@ body {
 }
 .dish-guide-item:last-child {
   border-bottom: none;
+}
+.dish-guide-content {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.dish-guide-text {
+  flex: 1;
+  min-width: 0;
+}
+.dish-guide-photo {
+  flex-shrink: 0;
+  width: 80px;
+  height: 60px;
+  border-radius: 7px;
+  overflow: hidden;
+  border: 1.5px solid var(--border);
+}
+.dish-guide-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .dish-guide-head {
   display: flex;

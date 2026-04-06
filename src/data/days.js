@@ -43,6 +43,7 @@ export const DAYS = [
         link: "http://www.ladegusterie.com/",
         maps: "https://www.google.com/maps/search/?api=1&query=Fromagerie+La+D%C3%A9gusterie+Pont-l%27%C3%89v%C3%AAque",
         phone: "+33 2 31 65 54 10",
+        photo: "photos/camembert.jpg",
       },
       {
         time: "11:30",
@@ -78,6 +79,7 @@ export const DAYS = [
         place: "Beuvron-en-Auge",
         desc: "«Самая красивая деревня Франции». Фахверк, площадь, кафе. Камамбер роти — запечённый с мёдом и орехами.",
         maps: "https://www.google.com/maps/search/?api=1&query=Beuvron-en-Auge+France",
+        photo: "photos/beuvron.jpg",
       },
       {
         time: "14:30",
@@ -91,6 +93,7 @@ export const DAYS = [
         phone: "+33 6 66 79 75 86",
         booking: "Бронь рекомендуется!",
         hours: "Апр–май, сент: вых 10–18. Июль–авг: ежедн.",
+        photo: "photos/clecy.jpg",
       },
       {
         time: "17:00",
@@ -195,6 +198,7 @@ export const DAYS = [
         desc: "Аббатство (€11), стены, улочки. Шаттл бесплатный (7:30–00:00). Вечером — подсвеченный остров.",
         maps: "https://www.google.com/maps/search/?api=1&query=Mont+Saint-Michel+France",
         booking: "Приливы: maree.info",
+        photo: "photos/msm.jpg",
       },
       {
         time: "вечер",
@@ -303,6 +307,7 @@ export const DAYS = [
         place: "20 мин от Экоссвиля",
         desc: "Гранитный рыбацкий порт — «самая красивая деревня Франции». Мидии прямо с лодок.",
         maps: "https://www.google.com/maps/search/?api=1&query=Barfleur+France",
+        photo: "photos/barfleur.jpg",
       },
       {
         time: "16:00",
@@ -312,6 +317,7 @@ export const DAYS = [
         desc: "2-й маяк Европы. 75 м, 365 ступеней, €3. Панорама.",
         maps: "https://www.google.com/maps/search/?api=1&query=Phare+de+Gatteville",
         rating: "4.7",
+        photo: "photos/gatteville.jpg",
       },
       {
         time: "16:30",
@@ -430,6 +436,7 @@ export const DAYS = [
         type: "optional",
         desc: "Готический собор (Моне рисовал 30 раз), фахверк, площадь Жанны д'Арк. Летом — световое шоу на фасаде.",
         maps: "https://www.google.com/maps/search/?api=1&query=Cath%C3%A9drale+Notre-Dame+de+Rouen",
+        photo: "photos/rouen.jpg",
       },
     ],
     food: [
@@ -476,18 +483,21 @@ export const DISHES = [
     icon: "Shell",
     where: "Понедельник, Барфлёр",
     desc: "Барфлёр — крупнейшее месторождение диких мидий во Франции. Не фермерские, а дикие — крупнее, мясистее, с ярким морским вкусом. Сезон: июль–февраль, пик осенью.",
+    photo: "photos/moules.jpg",
   },
   {
     name: "Устрицы у производителя",
     icon: "Fish",
     where: "Понедельник, Saint-Vaast",
     desc: "Нормандия = 25% всех устриц Франции. Saint-Vaast-la-Hougue — главный устричный порт. Дюжину у рыбака на набережной + лимон + бокал мюскаде. Не в ресторане с наценкой x3.",
+    photo: "photos/oysters.jpg",
   },
   {
     name: "Камамбер роти",
     icon: "Flame",
     where: "Суббота, Pays d'Auge",
     desc: "Целый камамбер запекается в деревянной коробке с мёдом, орехами или травами. Макаешь хлеб. Простое блюдо, но здесь — где камамбер делают на ферме через дорогу — совсем другой вкус.",
+    photo: "photos/camembert.jpg",
   },
   {
     name: "Teurgoule",
@@ -506,6 +516,7 @@ export const DISHES = [
     icon: "Apple",
     where: "Суббота, Pays d'Auge",
     desc: "Яблочный пирог на кальвадосе и нормандском масле. Здесь яблони за каждым забором — это их территория. Вариация: Tarte Tatin — перевёрнутый, карамельный.",
+    photo: "photos/tarte.jpg",
   },
   {
     name: "Галеты и крепы",

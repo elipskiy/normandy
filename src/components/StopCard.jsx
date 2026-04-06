@@ -21,9 +21,22 @@ export default function StopCard({ stop }) {
         )}
       </div>
 
-      {stop.place && <div className="stop-place">{stop.place}</div>}
-
-      <div className="stop-desc">{stop.desc}</div>
+      <div className="stop-content">
+        <div className="stop-text">
+          {stop.place && <div className="stop-place">{stop.place}</div>}
+          <div className="stop-desc">{stop.desc}</div>
+        </div>
+        {stop.photo && (
+          <a
+            href={stop.maps || stop.link || "#"}
+            target={stop.maps || stop.link ? "_blank" : undefined}
+            rel="noopener noreferrer"
+            className="stop-photo"
+          >
+            <img src={import.meta.env.BASE_URL + stop.photo} alt={stop.name} loading="lazy" />
+          </a>
+        )}
+      </div>
 
       {stop.fallback && (
         <div className="stop-fallback">
