@@ -21,6 +21,7 @@ export const DAYS = [
         link: "https://maps.google.com/?cid=16819355683746007983",
         maps: "https://www.google.com/maps/search/?api=1&query=Aire+de+Camping-Car+Amiens",
         rating: "4.3",
+        coordinates: [49.8906, 2.2985],
       },
     ],
   },
@@ -44,6 +45,7 @@ export const DAYS = [
         maps: "https://www.google.com/maps/search/?api=1&query=Fromagerie+La+D%C3%A9gusterie+Pont-l%27%C3%89v%C3%AAque",
         phone: "+33 2 31 65 54 10",
         photo: "photos/camembert.jpg",
+        coordinates: [49.2951, 0.1879],
       },
       {
         time: "11:30",
@@ -55,6 +57,7 @@ export const DAYS = [
         link: "https://www.calvados-dupont.com/",
         maps: "https://www.google.com/maps/search/?api=1&query=Domaine+Dupont+Victot-Pontfol",
         booking: "Без брони (май–сентябрь)",
+        coordinates: [49.2461, 0.1279],
       },
       {
         time: "~12:15",
@@ -63,6 +66,7 @@ export const DAYS = [
         place: "Beaufour-Druval",
         desc: "Маленькая органическая ферма, старый пресс, без толп.",
         maps: "https://www.google.com/maps/search/?api=1&query=Ferme+Cidricole+Desvoye+Beaufour-Druval",
+        coordinates: [49.2161, 0.1540],
       },
       {
         time: "~12:30",
@@ -71,6 +75,7 @@ export const DAYS = [
         place: "Cambremer",
         desc: "С 1865, 5-е поколение. AOP Pays d'Auge — их лучший. €3.50, тур ~1ч15. Пн–Сб 9–12:30, 14–18, вс 10–13, 15–18.",
         maps: "https://www.google.com/maps/search/?api=1&query=Calvados+Pierre+Huet+Cambremer",
+        coordinates: [49.1601, 0.1308],
       },
       {
         time: "13:00",
@@ -80,6 +85,7 @@ export const DAYS = [
         desc: "«Самая красивая деревня Франции». Фахверк, площадь, кафе. Камамбер роти — запечённый с мёдом и орехами.",
         maps: "https://www.google.com/maps/search/?api=1&query=Beuvron-en-Auge+France",
         photo: "photos/beuvron.jpg",
+        coordinates: [49.1769, 0.0603],
       },
       {
         time: "14:30",
@@ -94,6 +100,7 @@ export const DAYS = [
         booking: "Бронь рекомендуется!",
         hours: "Апр–май, сент: вых 10–18. Июль–авг: ежедн.",
         photo: "photos/clecy.jpg",
+        coordinates: [48.9172, -0.4657],
       },
       {
         time: "17:00",
@@ -105,6 +112,7 @@ export const DAYS = [
         link: "https://www.camping-normandie-clecy.eu/",
         maps: "https://www.google.com/maps/search/?api=1&query=Camping+des+Rochers+des+Parcs+Le+Vey",
         phone: "+33 2 31 69 70 36",
+        coordinates: [48.9127, -0.4592],
       },
     ],
     food: [
@@ -117,6 +125,7 @@ export const DAYS = [
         rating: "4.7",
         maps: "https://www.google.com/maps/search/?api=1&query=Le+Pav%C3%A9+d%27Auge+Beuvron-en-Auge",
         phone: "+33 2 31 79 26 71",
+        coordinates: [49.1769, 0.0605],
       },
       {
         name: "La Colomb'auge",
@@ -127,6 +136,7 @@ export const DAYS = [
         rating: "4.6",
         maps: "https://www.google.com/maps/search/?api=1&query=La+Colomb%27auge+Beuvron-en-Auge",
         phone: "+33 2 31 39 02 65",
+        coordinates: [49.1768, 0.0602],
       },
       {
         name: "La Route des Crêpes",
@@ -137,6 +147,7 @@ export const DAYS = [
         rating: "4.7",
         maps: "https://www.google.com/maps/search/?api=1&query=La+Route+des+Cr%C3%AApes+La+Pommeraye",
         phone: "+33 2 31 69 15 88",
+        coordinates: [48.9471, -0.4879],
       },
       {
         name: "La pomme d'happy",
@@ -147,6 +158,7 @@ export const DAYS = [
         rating: "4.8",
         maps: "https://www.google.com/maps/search/?api=1&query=La+pomme+d%27happy+Cl%C3%A9cy",
         phone: "+33 2 31 59 77 86",
+        coordinates: [48.9195, -0.4737],
       },
     ],
     nearby: [
@@ -164,6 +176,7 @@ export const DAYS = [
         desc: "Середина апреля = пик цветения яблонь. Белые и розовые цветы над зелёным нормандским бокажем с фахверковыми фермами. Практически никто не фотографирует. Снимай с запада во второй половине дня.",
         light: "Вечер, против света",
         maps: "https://www.google.com/maps/search/?api=1&query=Route+du+Cidre+Cambremer",
+        coordinates: [49.1601, 0.1308],
       },
       {
         type: "photo",
@@ -171,6 +184,7 @@ export const DAYS = [
         desc: "171 м над долиной. Река делает петлю внизу — классический изгиб. В сентябре–октябре утром туман стелется по долине, деревья торчат из белого. Парковка у Saint-Omer, 15 мин пешком.",
         light: "Рассвет, осенний туман",
         maps: "https://www.google.com/maps/search/?api=1&query=Pain+de+Sucre+Cl%C3%A9cy",
+        coordinates: [48.9104, -0.4694],
       },
     ],
   },
@@ -190,6 +204,7 @@ export const DAYS = [
         place: "Saint-Philbert-sur-Orne (15 мин южнее Клеси)",
         desc: "118 м скала над ущельем Рувр. Тропы по краю обрыва, скальная формация в форме лица. Бесплатно, парковка для кемпера.",
         maps: "https://www.google.com/maps/search/?api=1&query=Roche+d%27O%C3%ABtre+Saint-Philbert-sur-Orne",
+        coordinates: [48.8630, -0.4917],
       },
       {
         time: "09:30",
@@ -204,6 +219,7 @@ export const DAYS = [
         place: "Avranches",
         desc: "По дороге. Панорама на залив и силуэт Mont. Бесплатно, 20 мин.",
         maps: "https://www.google.com/maps/search/?api=1&query=Jardin+des+Plantes+Avranches",
+        coordinates: [48.6863, -1.3553],
       },
       {
         time: "12:00",
@@ -213,6 +229,7 @@ export const DAYS = [
         maps: "https://www.google.com/maps/search/?api=1&query=Mont+Saint-Michel+France",
         booking: "Приливы: maree.info",
         photo: "photos/msm.jpg",
+        coordinates: [48.6361, -1.5115],
       },
       {
         time: "вечер",
@@ -223,6 +240,7 @@ export const DAYS = [
         link: "https://www.campingcarpark.com/",
         maps: "https://www.google.com/maps/search/?api=1&query=Aire+de+Camping+Car+Beauvoir+Mont+Saint-Michel",
         phone: "+33 1 83 64 69 21",
+        coordinates: [48.6152, -1.4993],
       },
     ],
     food: [
@@ -234,6 +252,7 @@ export const DAYS = [
         price: "€10–20",
         rating: "4.8",
         maps: "https://www.google.com/maps/search/?api=1&query=Creperie+La+Flamb%C3%A9e+des+Cuivres+Villedieu-les-Po%C3%AAles",
+        coordinates: [48.8375, -1.2175],
       },
       {
         name: "La Casa de Quentin",
@@ -243,6 +262,7 @@ export const DAYS = [
         price: "€20–30",
         rating: "4.7",
         maps: "https://www.google.com/maps/search/?api=1&query=La+Casa+de+Quentin+Beauvoir",
+        coordinates: [48.6117, -1.4959],
       },
       {
         name: "Le Relais Gascon",
@@ -252,6 +272,7 @@ export const DAYS = [
         price: "€20–30",
         rating: "4.6",
         maps: "https://www.google.com/maps/search/?api=1&query=Le+relais+gascon+Pontorson",
+        coordinates: [48.5561, -1.5089],
       },
       {
         name: "Мер Пулар",
@@ -262,6 +283,7 @@ export const DAYS = [
         rating: "3.6",
         trap: true,
         maps: "https://www.google.com/maps/search/?api=1&query=La+M%C3%A8re+Poulard+Mont+Saint-Michel",
+        coordinates: [48.6361, -1.5116],
       },
     ],
     nearby: [
@@ -271,6 +293,7 @@ export const DAYS = [
         desc: "ЭТО то место с зелёными кочками. Мыс чуть приподнят над prés-salés — МСМ по центру, каналы воды дают зеркало, овцы на среднем плане. Паркинг у деревни Courtils, 15 мин пешком. Не путай с отелем.",
         light: "Золотой час / закат (МСМ на юго-запад)",
         maps: "https://www.google.com/maps/search/?api=1&query=Pointe+de+la+Roche+Torin+Courtils",
+        coordinates: [48.6286, -1.4511],
       },
       {
         type: "photo",
@@ -278,6 +301,7 @@ export const DAYS = [
         desc: "Дикий мыс Conservatoire du Littoral: скалы, никаких построек в кадре, МСМ под косым углом. Телевик сделает остров крупнее. Закат, смотришь на северо-запад.",
         light: "Закат",
         maps: "https://www.google.com/maps/search/?api=1&query=Pointe+du+Grouin+du+Sud+Manche",
+        coordinates: [48.5822, -1.5536],
       },
       {
         type: "photo",
@@ -285,6 +309,7 @@ export const DAYS = [
         desc: "12 км мокрого песка при большом отливе. МСМ отражается в зеркальном слое воды. Бочши (bouchots) дают ведущие линии к замку. Рассвет, смотришь на восток. Надевай сапоги — песок мягкий.",
         light: "Рассвет, 2–3 ч после полной воды",
         maps: "https://www.google.com/maps/search/?api=1&query=Bec+d%27Andaine+Gen%C3%AAts",
+        coordinates: [48.6511, -1.5514],
       },
       {
         type: "photo",
@@ -292,16 +317,19 @@ export const DAYS = [
         desc: "80 м клифа над заливом, МСМ на горизонте через 20+ км. Eisenhower назвал этот километр «самым красивым во Франции». Июль–август — вереск цветёт фиолетовым. Домик Людовика XIV как передний план.",
         light: "Вечер, телевик на МСМ",
         maps: "https://www.google.com/maps/search/?api=1&query=Champeaux+Manche+cabane+Vauban",
+        coordinates: [48.8003, -1.5347],
       },
       {
         name: "Barrage du Couesnon",
         desc: "Дамба у MSM — вечерний вид на остров с уровня воды. Пешком от парковки, бесплатно.",
         maps: "https://www.google.com/maps/search/?api=1&query=Barrage+du+Couesnon+Mont-Saint-Michel",
+        coordinates: [48.6286, -1.5139],
       },
       {
         name: "Fonderie Cornille-Havard",
         desc: "Литейня колоколов с XII века в Villedieu-les-Poêles. Смотришь как льют бронзу. ~€7, по дороге.",
         maps: "https://www.google.com/maps/search/?api=1&query=Fonderie+Cornille-Havard+Villedieu-les-Po%C3%AAles",
+        coordinates: [48.8375, -1.2175],
       },
     ],
   },
@@ -322,6 +350,7 @@ export const DAYS = [
         booking: "decouvertebaie.com или gambettes-enbaie.fr",
         fallback:
           "Если приливы не совпали — раннее утро на острове.",
+        coordinates: [48.6511, -1.5514],
       },
       {
         time: "12:30",
@@ -335,6 +364,7 @@ export const DAYS = [
         phone: "+33 6 41 98 32 97",
         booking: "ОБЯЗАТЕЛЬНО бронируй!",
         hours: "С 11 апреля. Ежедн. 9–17:30.",
+        coordinates: [49.3785, -1.3978],
       },
       {
         time: "15:00",
@@ -344,6 +374,7 @@ export const DAYS = [
         desc: "Гранитный рыбацкий порт — «самая красивая деревня Франции». Мидии прямо с лодок.",
         maps: "https://www.google.com/maps/search/?api=1&query=Barfleur+France",
         photo: "photos/barfleur.jpg",
+        coordinates: [49.6734, -1.2742],
       },
       {
         time: "16:00",
@@ -354,6 +385,7 @@ export const DAYS = [
         maps: "https://www.google.com/maps/search/?api=1&query=Phare+de+Gatteville",
         rating: "4.7",
         photo: "photos/gatteville.jpg",
+        coordinates: [49.6978, -1.2559],
       },
       {
         time: "16:30",
@@ -362,6 +394,7 @@ export const DAYS = [
         place: "15 мин от Барфлёра",
         desc: "Устричный порт. Дюжину у рыбаков на набережной с лимоном. Нормандия = 25% устриц Франции.",
         maps: "https://www.google.com/maps/search/?api=1&query=Saint-Vaast-la-Hougue+France",
+        coordinates: [49.5886, -1.2624],
       },
       {
         time: "18:00",
@@ -372,6 +405,7 @@ export const DAYS = [
         link: "https://www.camping-sainte-mere.fr/",
         maps: "https://www.google.com/maps/search/?api=1&query=Camping+Sainte-M%C3%A8re-%C3%89glise",
         phone: "+33 2 33 41 35 22",
+        coordinates: [49.4103, -1.3128],
       },
     ],
     food: [
@@ -384,6 +418,7 @@ export const DAYS = [
         rating: "4.5",
         maps: "https://www.google.com/maps/search/?api=1&query=Le+Safran+restaurant+Barfleur",
         phone: "+33 2 33 20 02 18",
+        coordinates: [49.6735, -1.2742],
       },
       {
         name: "L'Estran",
@@ -394,6 +429,7 @@ export const DAYS = [
         rating: "4.9",
         maps: "https://www.google.com/maps/search/?api=1&query=L%27Estran+restaurant+Saint-Vaast-la-Hougue",
         phone: "+33 2 33 44 86 09",
+        coordinates: [49.5886, -1.2619],
       },
       {
         name: "Café de France",
@@ -404,6 +440,7 @@ export const DAYS = [
         rating: "4.4",
         maps: "https://www.google.com/maps/search/?api=1&query=Caf%C3%A9+de+France+Barfleur",
         phone: "+33 2 33 54 00 38",
+        coordinates: [49.6734, -1.2741],
       },
       {
         name: "L'entre deux tours",
@@ -414,6 +451,7 @@ export const DAYS = [
         rating: "4.8",
         maps: "https://www.google.com/maps/search/?api=1&query=L%27entre+deux+tours+Saint-Vaast-la-Hougue",
         phone: "+33 6 08 07 85 62",
+        coordinates: [49.5885, -1.2621],
       },
     ],
     markets: [
@@ -424,6 +462,7 @@ export const DAYS = [
         icon: "Shell",
         rating: "4.5",
         maps: "https://www.google.com/maps/search/?api=1&query=Maison+Lesdos+Saint-Vaast-la-Hougue",
+        coordinates: [49.5886, -1.2625],
       },
       {
         name: "Порт Барфлёр",
@@ -431,6 +470,7 @@ export const DAYS = [
         when: "Утро",
         icon: "Fish",
         maps: "https://www.google.com/maps/search/?api=1&query=Port+de+Barfleur",
+        coordinates: [49.6734, -1.2742],
       },
       {
         name: "Marché de Cherbourg",
@@ -438,6 +478,7 @@ export const DAYS = [
         when: "Чт / Вс утро",
         icon: "Store",
         maps: "https://www.google.com/maps/search/?api=1&query=March%C3%A9+de+Cherbourg",
+        coordinates: [49.6333, -1.6222],
       },
     ],
     nearby: [
@@ -447,6 +488,7 @@ export const DAYS = [
         desc: "Гавань смотрит на северо-восток — восходящее солнце бьёт прямо в гранитные фасады. В 6–7 утра никого нет. Высокий прилив: дома отражаются в воде. Отлив: лодки лежат на боку — тоже красиво.",
         light: "Рассвет (5:30–7:00)",
         maps: "https://www.google.com/maps/search/?api=1&query=Port+de+Barfleur",
+        coordinates: [49.6734, -1.2742],
       },
       {
         type: "photo",
@@ -454,16 +496,19 @@ export const DAYS = [
         desc: "Чёрно-оранжевый гранит разбит волнами в острые формы. При ветре брызги летят высоко — кадр с маяком сквозь водяную завесу. Поднимись на маяк для вида с высоты на Котантен.",
         light: "Любое время, шторм = драма",
         maps: "https://www.google.com/maps/search/?api=1&query=Phare+de+Gatteville",
+        coordinates: [49.6978, -1.2559],
       },
       {
         name: "Nez de Jobourg",
         desc: "Самые высокие скалы Нормандии — 128 м. 40 мин от Барфлёра, немного крюк.",
         maps: "https://www.google.com/maps/search/?api=1&query=Nez+de+Jobourg",
+        coordinates: [49.6878, -1.9447],
       },
       {
         name: "Port Racine",
         desc: "Самый маленький порт Франции. Деревня Сен-Жермен-де-Вак.",
         maps: "https://www.google.com/maps/search/?api=1&query=Port+Racine+Saint-Germain-des-Vaux",
+        coordinates: [49.7273, -1.9211],
       },
     ],
   },
@@ -489,6 +534,7 @@ export const DAYS = [
         desc: "Готический собор (Моне рисовал 30 раз), фахверк, площадь Жанны д'Арк. Летом — световое шоу на фасаде.",
         maps: "https://www.google.com/maps/search/?api=1&query=Cath%C3%A9drale+Notre-Dame+de+Rouen",
         photo: "photos/rouen.jpg",
+        coordinates: [49.4432, 1.0993],
       },
     ],
     food: [
@@ -500,6 +546,7 @@ export const DAYS = [
         price: "€26–32",
         rating: "4.6",
         maps: "https://www.google.com/maps/search/?api=1&query=OKTO+restaurant+Rouen",
+        coordinates: [49.4428, 1.1002],
       },
       {
         name: "La Couronne",
@@ -509,6 +556,7 @@ export const DAYS = [
         price: "€25–50",
         rating: "4.3",
         maps: "https://www.google.com/maps/search/?api=1&query=La+Couronne+restaurant+Rouen",
+        coordinates: [49.4419, 1.0938],
       },
     ],
     markets: [
@@ -518,6 +566,7 @@ export const DAYS = [
         when: "Вт, Пт, Сб, Вс утро",
         icon: "Store",
         maps: "https://www.google.com/maps/search/?api=1&query=March%C3%A9+Saint-Marc+Rouen",
+        coordinates: [49.4417, 1.0822],
       },
     ],
     nearby: [
@@ -527,6 +576,7 @@ export const DAYS = [
         desc: "Часы 1527 года над пешеходной улицей. Встань в торце — арча обрамляет перспективу уходящих фахверков. Снимай до открытия магазинов. Мокрая брусчатка после дождя = отражения.",
         light: "Синий час / до 8:00",
         maps: "https://www.google.com/maps/search/?api=1&query=Rue+du+Gros-Horloge+Rouen",
+        coordinates: [49.4427, 1.0966],
       },
       {
         type: "photo",
@@ -534,6 +584,7 @@ export const DAYS = [
         desc: "Лесистый холм восточнее центра. Шпиль собора, петля Сены, промышленные краны — всё в одном кадре. Почти никто не поднимается. Телевик сжимает слои города.",
         light: "Вечер, золотой час",
         maps: "https://www.google.com/maps/search/?api=1&query=C%C3%B4te+Sainte-Catherine+Rouen",
+        coordinates: [49.4381, 1.1197],
       },
     ],
   },
