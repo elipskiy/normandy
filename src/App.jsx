@@ -1,15 +1,17 @@
 import usePersistedState from "./hooks/usePersistedState";
-import { Caravan, MapPin, Bookmark, Coins, UtensilsCrossed } from "lucide-react";
+import { Caravan, MapPin, Bookmark, Coins, UtensilsCrossed, Map } from "lucide-react";
 import RouteTab from "./components/RouteTab";
 import FoodTab from "./components/FoodTab";
 import BookTab from "./components/BookTab";
 import BudgetTab from "./components/BudgetTab";
+import MapTab from "./components/MapTab";
 
 const TABS = [
   { key: "route", label: "Маршрут", Icon: MapPin },
   { key: "food", label: "Еда", Icon: UtensilsCrossed },
   { key: "book", label: "Бронь", Icon: Bookmark },
   { key: "budget", label: "Бюджет", Icon: Coins },
+  { key: "map", label: "Карта", Icon: Map },
 ];
 
 export default function App() {
@@ -48,6 +50,7 @@ export default function App() {
         {tab === "food" && <FoodTab />}
         {tab === "book" && <BookTab />}
         {tab === "budget" && <BudgetTab />}
+        {tab === "map" && <MapTab />}
       </main>
     </div>
   );
