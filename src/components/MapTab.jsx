@@ -18,30 +18,6 @@ const TYPE_LABELS = {
 };
 
 const ALL_TYPES = Object.keys(TYPE_LABELS);
-const CACHE_TTL = 24 * 60 * 60 * 1000;
-
-function getCachedRoute(dayIndex) {
-  try {
-    const raw = localStorage.getItem(`normandy:route:day${dayIndex}`);
-    if (!raw) return null;
-    const { timestamp, encodedPath } = JSON.parse(raw);
-    if (Date.now() - timestamp > CACHE_TTL) return null;
-    return encodedPath;
-  } catch {
-    return null;
-  }
-}
-
-function setCachedRoute(dayIndex, encodedPath) {
-  try {
-    localStorage.setItem(
-      `normandy:route:day${dayIndex}`,
-      JSON.stringify({ timestamp: Date.now(), encodedPath })
-    );
-  } catch {
-    // ignore storage errors
-  }
-}
 
 export default function MapTab() {
   const mapDivRef = useRef(null);
@@ -88,9 +64,14 @@ export default function MapTab() {
       console.error("[MapTab] NORMANDY_CONFIG.GOOGLE_MAPS_API_KEY is not set");
       return;
     }
+    if (document.querySelector('script[src*="maps.googleapis.com"]')) {
+      // Script already injected but not yet loaded — wait for callback
+      window.__normandyMapInit = initMap;
+      return;
+    }
     window.__normandyMapInit = initMap;
     const script = document.createElement("script");
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${key}&libraries=geometry&callback=__normandyMapInit`;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${key}&callback=__normandyMapInit`;
     script.async = true;
     document.head.appendChild(script);
     return () => {
@@ -207,47 +188,10 @@ export default function MapTab() {
     });
   }
 
-  function drawPolyline(encodedPath) {
-    const path = window.google.maps.geometry.encoding.decodePath(encodedPath);
-    const line = new window.google.maps.Polyline({
-      path,
-      geodesic: true,
-      strokeColor: "#3b82f6",
-      strokeOpacity: 0.55,
-      strokeWeight: 4,
-      map: mapRef.current,
-    });
-    polylinesRef.current.push(line);
-  }
-
-  function fetchAndDrawRoute(waypoints, dayIndex) {
-    const svc = new window.google.maps.DirectionsService();
-    svc.route(
-      {
-        origin: { lat: waypoints[0][0], lng: waypoints[0][1] },
-        destination: {
-          lat: waypoints[waypoints.length - 1][0],
-          lng: waypoints[waypoints.length - 1][1],
-        },
-        waypoints: waypoints.slice(1, -1).map((w) => ({
-          location: { lat: w[0], lng: w[1] },
-          stopover: true,
-        })),
-        travelMode: window.google.maps.TravelMode.DRIVING,
-      },
-      (result, status) => {
-        if (status !== "OK") return;
-        const encoded = result.routes[0].overview_polyline;
-        setCachedRoute(dayIndex, encoded);
-        drawPolyline(encoded);
-      }
-    );
-  }
-
   function renderRoutes(day) {
     polylinesRef.current.forEach((p) => p.setMap(null));
     polylinesRef.current = [];
-    if (!mapRef.current || !window.google?.maps?.geometry) return;
+    if (!mapRef.current) return;
 
     const indices = day === "all" ? DAYS.map((_, i) => i) : [day];
     indices.forEach((dayIndex) => {
@@ -256,12 +200,15 @@ export default function MapTab() {
         .map((s) => s.coordinates);
       if (waypoints.length < 2) return;
 
-      const cached = getCachedRoute(dayIndex);
-      if (cached) {
-        drawPolyline(cached);
-      } else {
-        fetchAndDrawRoute(waypoints, dayIndex);
-      }
+      const line = new window.google.maps.Polyline({
+        path: waypoints.map(([lat, lng]) => ({ lat, lng })),
+        geodesic: true,
+        strokeColor: "#3b82f6",
+        strokeOpacity: 0.5,
+        strokeWeight: 3,
+        map: mapRef.current,
+      });
+      polylinesRef.current.push(line);
     });
   }
 
