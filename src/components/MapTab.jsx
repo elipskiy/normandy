@@ -30,29 +30,6 @@ export default function MapTab() {
   const [activeDay, setActiveDay] = useState("all");
   const [activeTypes, setActiveTypes] = useState(new Set(ALL_TYPES));
 
-  // Fit map height to remaining viewport below header + tabs + controls
-  useEffect(() => {
-    function setHeight() {
-      const header = document.querySelector(".header");
-      const tabs = document.querySelector(".tabs");
-      const controls = document.querySelector(".map-controls");
-      const headerH = header?.offsetHeight ?? 0;
-      const tabsH = tabs?.offsetHeight ?? 0;
-      const controlsH = controls?.offsetHeight ?? 0;
-      if (mapDivRef.current) {
-        mapDivRef.current.style.height = `${
-          window.innerHeight - headerH - tabsH - controlsH
-        }px`;
-      }
-    }
-    const t = setTimeout(setHeight, 0);
-    window.addEventListener("resize", setHeight);
-    return () => {
-      clearTimeout(t);
-      window.removeEventListener("resize", setHeight);
-    };
-  }, []);
-
   // Load Google Maps JS API
   useEffect(() => {
     if (window.google?.maps) {
