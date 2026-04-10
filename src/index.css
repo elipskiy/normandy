@@ -306,6 +306,10 @@ body {
 .stop:last-child {
   border-left-color: transparent;
 }
+.stop[data-type="optional"] {
+  border-left: 2px dashed color-mix(in srgb, var(--border) 70%, transparent);
+  padding-bottom: 14px;
+}
 .stop-dot {
   position: absolute;
   left: -7px;
@@ -328,11 +332,13 @@ body {
   box-shadow: 0 0 0 1.5px var(--stone);
 }
 .stop[data-type="optional"] .stop-dot {
-  background: var(--border);
-  box-shadow: 0 0 0 1.5px var(--border);
-}
-.stop[data-type="optional"] {
-  opacity: 0.78;
+  width: 8px;
+  height: 8px;
+  left: -5px;
+  top: 4px;
+  background: var(--card);
+  border: 2px solid var(--border);
+  box-shadow: none;
 }
 .stop-head {
   display: flex;
@@ -351,6 +357,28 @@ body {
   font-size: 17px;
   font-weight: 600;
   color: var(--ink);
+}
+.stop--collapsed:hover .stop-name {
+  opacity: 0.7;
+}
+.stop-head--optional {
+  user-select: none;
+}
+.stop-expand-icon {
+  color: var(--border);
+  flex-shrink: 0;
+  transition: transform 0.2s;
+  margin-left: 2px;
+}
+.stop-expand-icon--open {
+  transform: rotate(180deg);
+}
+.stop-place--collapsed {
+  font-size: 11px;
+  color: var(--ink-muted);
+  font-style: italic;
+  margin-top: 1px;
+  padding-left: 0;
 }
 .stop-optional-badge {
   font-size: 9px;
