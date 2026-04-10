@@ -23,7 +23,8 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
-      - run: printf 'window.NORMANDY_CONFIG = { GOOGLE_MAPS_API_KEY: "%s" };\n' "$MAPS_KEY" > public/config.js
+      - run: |
+          echo "window.NORMANDY_CONFIG = { GOOGLE_MAPS_API_KEY: '$MAPS_KEY' };" > public/config.js
         env:
           MAPS_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
       - run: npm run build
